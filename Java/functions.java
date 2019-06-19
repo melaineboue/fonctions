@@ -9,7 +9,9 @@ function findLargest(numbers) {
 static boolean dichotomie(int[] ints, int k) {
 		boolean result = false;
 		int min = 0, max = ints.length-1, middle = (min+max)/2;
-		
+		if(k<ints[min] || k>ints[max])
+		    return false;
+		    
 		while(min<middle && middle<max)
 		{
 		    if(ints[min]==k || ints[middle]==k || ints[max]==k)
