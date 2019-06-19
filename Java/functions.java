@@ -5,3 +5,28 @@ function findLargest(numbers) {
     });
     return max;
 }
+
+static boolean dichotomie(int[] ints, int k) {
+		boolean result = false;
+		int min = 0, max = ints.length-1, middle = (min+max)/2;
+		
+		while(min<middle && middle<max)
+		{
+		    if(ints[min]==k || ints[middle]==k || ints[max]==k)
+		        return true;
+	        else
+	        {
+	            if(k<ints[middle])
+	            {
+	                max = middle;
+	                middle = (min+max)/2;
+	            }
+	            else if(k>ints[middle])
+	            {
+	                min = middle;
+	                middle = (min+max)/2;
+	            }
+	        }
+		}
+		return false;
+	}
