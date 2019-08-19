@@ -32,3 +32,18 @@ static boolean dichotomie(int[] ints, int k) {
 		}
 		return false;
 	}
+
+
+	public static String getTextFormate(String old, int n)
+	{
+		String transform = old.replace(" ", "");
+		String t2="";
+		for (int i=0;i<transform.length();i++)
+		{
+			if(i!=0 && i%n==0)
+				t2 += "\n"+transform.charAt(i);
+			else 
+				t2 += transform.charAt(i);
+		}
+		return t2;
+	}
