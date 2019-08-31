@@ -33,6 +33,22 @@ static boolean dichotomie(int[] ints, int k) {
 		return false;
 	}
 
+static boolean dichotomie2(int[] ints, int k) {
+       int debut = 0;
+       int fin = ints.length-1;
+       while (debut <= fin) {
+	  int milieu =( debut + fin)/2;
+	  if (ints[milieu]< k)   
+	    debut = milieu + 1;
+	  else if (ints[milieu]> k) 
+	    fin = milieu - 1;
+	  else 
+	    return true; // trouvé
+       }
+       return false;
+}
+
+
 
 	public static String getTextFormate(String old, int n)
 	{
