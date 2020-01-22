@@ -62,3 +62,22 @@ public class Fichier {
 	}
 
 }
+
+public static Change monnaie(long s) {
+	if (s == 1 || s == 3)
+		return null;
+
+	Change monnaie = new Change();
+	monnaie.coin10 = (int) s / 10;
+	if ((s % 10 == 1 || s % 10 == 3) && monnaie.coin10 > 0)
+		monnaie.coin10--;
+	s -= monnaie.coin10 * 10;
+
+	monnaie.coin5 = (int) s / 5;
+	if ((s % 5 == 1 || s % 5 == 3)&& monnaie.coin5 > 0)
+		monnaie.coin5--;
+	s -= monnaie.coin5 * 5;
+
+	monnaie.coin2 = (int)s/2;
+	return monnaie;
+}
