@@ -67,17 +67,17 @@ public static Change monnaie(long s) {
 	if (s == 1 || s == 3)
 		return null;
 
-	Change monnaie = new Change();
-	monnaie.coin10 = (int) s / 10;
-	if ((s % 10 == 1 || s % 10 == 3) && monnaie.coin10 > 0)
-		monnaie.coin10--;
-	s -= monnaie.coin10 * 10;
+        Change monnaie = new Change();
+        monnaie.bill10 = (int) s / 10;
+        if ((s % 10 == 1 || s % 10 == 3) && monnaie.bill10 > 0)
+            monnaie.bill10--;
+        s -= monnaie.bill10 * 10;
 
-	monnaie.coin5 = (int) s / 5;
-	if ((s % 5 == 1 || s % 5 == 3)&& monnaie.coin5 > 0)
-		monnaie.coin5--;
-	s -= monnaie.coin5 * 5;
+        monnaie.bill5 = (int) s / 5;
+        if ((s % 5 == 1 || s % 5 == 3)&& monnaie.bill5 > 0)
+            monnaie.bill5--;
+        s -= monnaie.bill5 * 5;
 
-	monnaie.coin2 = (int)s/2;
-	return monnaie;
+        monnaie.coin2 = (int)s/2;
+        return monnaie;
 }
